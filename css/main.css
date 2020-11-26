@@ -324,7 +324,7 @@ a.btn:hover:after{
 .book {
   transform-style: preserve-3d;
   position: relative;
-  height: 40vh;
+  height: 55vh;
   cursor: pointer;
   backface-visibility: visible;
   grid-area: book;
@@ -423,7 +423,32 @@ footer{
 
 /*-------------Media Querries-----------*/
 @media only screen and (min-width: 800px) {
-  /*---------Audio Button-------------*/
+
+
+
+/*------------Book-------------------*/
+.book--grid {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . ."
+    ". . book ."
+    ". . book ."
+    ". . . .";
+}
+
+.book{
+  height: 40vh;
+}
+
+.front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+  width: 25vw;
+  height: 100%;
+}
+
+/*---------Audio Button-------------*/
   .switch{
     width: 80px;
     height: 40px;
