@@ -48,7 +48,16 @@ body{
 
 .uitleg { grid-area: uitleg; }
 
-.footer { grid-area: footer; }
+.footer {
+  grid-area: footer;
+  right: 0;
+}
+
+.footer > ul > li {
+  display: inline-block;
+  margin-left: 3vw;
+  margin-right: 1vw;
+}
 
 .audio--toggle {
   grid-area: audio--toggle;
@@ -77,26 +86,24 @@ a.btn{
     position:relative;
     display:inline-block;
 }
-a.btn:after{
+a.btn:before{
     position:absolute;
-    right:-20px;
+    left:-25px;
     content:" ";
     width: 0px;
     height: 0px;
     border-style: solid;
-    border-width: 25px 0 25px 20px;
-    border-color: transparent transparent transparent var(--main-color);
+    border-width: 25px 25px 25px 0;
+    border-color: transparent var(--main-color) transparent transparent;
 }
 a.btn:hover{
     background-color: var(--main-color);
     color: var(--background-color);
 }
-a.btn:hover:after{
+a.btn:hover:before{
     width: 0px;
     height: 0px;
     border-style: solid;
-    border-width: 25px 0 25px 20px;
-    border-color: transparent transparent transparent var(--main-color);
 }
 
 
@@ -227,6 +234,35 @@ a.btn:hover:after{
   grid-area: continue--arrow;
 }
 
+
+/*----------------Credits gridpagina-------------*/
+.credits--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  margin: 1em;
+  gap: 3em 3em;
+  grid-template-areas:
+    "creditsButton . ."
+    "creditsDevin creditsFeurat creditsHogeschool"
+    "creditsTom creditsIDFA creditsHogeschool"
+}
+
+.credits--button { grid-area: creditsButton}
+
+.credits--devin { grid-area: creditsDevin; }
+
+.credits--feurat { grid-area: creditsFeurat; }
+
+.credits--IDFA { grid-area: creditsIDFA; }
+
+.credits--tom { grid-area: creditsTom; }
+
+.credits--hogeschool { grid-area: creditsHogeschool; }
+
+.credits--tekst > h2{
+
+}
 
 /*------------Video Grid (Single)------------*/
 .video--grid--single {
